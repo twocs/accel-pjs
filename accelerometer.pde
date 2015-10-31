@@ -18,22 +18,31 @@
 
 void setup()
 {
+  // set size of the processing window0
   size(400,300);
+  
+  // 
   stroke(0);
   fill(0);
-  textSize(40);
 }
 
 void draw()
 {
   background(#aaaaaa);
+  
+  // check if the window.ondevicemotion event has set x to a value
   if(x == null)
   {
     textSize(20);
     text("No accelerometer detected\nAre you on a mobile phone?", 20, 60);
   }
-  else text("sensor detected", 20, 60);
+  else 
+  {
+    textSize(40);
+    text("sensor detected", 20, 60);
+  }
 
+  // display x, y, z information on the screen
   textSize(40);
   text("x: " + x, 20, 120);
   text("y: " + y, 20, 180);
